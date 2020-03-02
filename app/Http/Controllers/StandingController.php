@@ -12,8 +12,12 @@ class StandingController extends Controller
     {
         /** @var League $premierLeague */
         $premierLeague = League::first();
-        $matches = Match::where('week', $week)->where('league_id', $premierLeague->getObjectId())->get();
-        $standings = Standing::getStanding($matches);
+        $matches = Match::where('week', '<=', (integer)$week)->where('league_id', $premierLeague->getObjectId())->get();
+        $teams = $premierLeague->teams;
+        $standings = (new Standing())
+            ->setTeams($teams)
+            ->setMatches($matches)
+            ->getStanding();
 
         return view('standing.index', compact('standings', 'matches'));
     }

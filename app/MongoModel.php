@@ -13,4 +13,9 @@ class MongoModel extends Model
     {
         return objectId($this->id);
     }
+
+    public function getStringId()
+    {
+        return (string)$this->id;
+    }
 }

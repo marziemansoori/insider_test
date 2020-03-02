@@ -15,8 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('standing/{week?}', 'StandingController@index');
+Route::get('standing/{week?}', 'StandingController@index')->name('standing');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

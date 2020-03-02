@@ -19,7 +19,6 @@ class MatchSeeder extends Seeder
 
         $teams = Team::all();
 
-        $index = 1;
         /** @var Team $team */
         foreach ($teams as $team) {
             foreach ($teams as $team2) {
@@ -31,7 +30,6 @@ class MatchSeeder extends Seeder
                     'league_id' => $league->getObjectId(),
                     'league_name' => 'Premier League',
                     'game_status' => "finished",
-                    'week' => $index,
                 ];
 
                 $firstMatch = Match::create(array_merge([
@@ -47,6 +45,7 @@ class MatchSeeder extends Seeder
                         'home_team' => rand(0, 5),
                         'away_team' => rand(0, 5)
                     ],
+                    'week' => $this->getWeek()
                 ], $data));
 
                 $secondMatch = Match::create(array_merge([
@@ -62,11 +61,10 @@ class MatchSeeder extends Seeder
                         'home_team' => rand(0, 4),
                         'away_team' => rand(0, 5)
                     ],
+                    'week' => $this->getWeek()
                 ], $data));
 
-                $index++;
-
-                if($firstMatch->result['home_team'] > 0) {
+                if ($firstMatch->result['home_team'] > 0) {
                     $index = $firstMatch->result['home_team'];
                     while ($index > 0) {
                         $firstMatchIncidents[] = [
@@ -77,7 +75,7 @@ class MatchSeeder extends Seeder
                     }
                 }
 
-                if($firstMatch->result['away_team'] > 0) {
+                if ($firstMatch->result['away_team'] > 0) {
                     $index = $firstMatch->result['away_team'];
                     while ($index > 0) {
                         $firstMatchIncidents[] = [
@@ -89,7 +87,7 @@ class MatchSeeder extends Seeder
                 }
 
 
-                if($secondMatch->result['home_team'] > 0) {
+                if ($secondMatch->result['home_team'] > 0) {
                     $index = $secondMatch->result['home_team'];
                     while ($index > 0) {
                         $secondMatchIncidents[] = [
@@ -100,7 +98,7 @@ class MatchSeeder extends Seeder
                     }
                 }
 
-                if($secondMatch->result['away_team'] > 0) {
+                if ($secondMatch->result['away_team'] > 0) {
                     $index = $secondMatch->result['away_team'];
                     while ($index > 0) {
                         $secondMatchIncidents[] = [
@@ -118,6 +116,18 @@ class MatchSeeder extends Seeder
 
                 $firstMatchIncidents = [];
                 $secondMatchIncidents = [];
+            }
+        }
+    }
+
+    private function getWeek()
+    {
+        $find = true;
+        while ($find) {
+            $index = rand(1, 12);
+            $matches = Match::where('week', $index)->get();
+            if (count($matches) < 2) {
+                return $index;
             }
         }
     }

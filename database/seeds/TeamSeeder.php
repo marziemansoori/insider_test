@@ -23,7 +23,7 @@ class TeamSeeder extends Seeder
         ]);
 
         Team::create([
-            'name' => "Manchester City",
+            'name' => "Man City",
             "county" => "England"
         ]);
 

@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         Team::query()->delete();
         Match::query()->delete();
 
-         $this->call(LeagueSeeder::class);
-         $this->call(TeamSeeder::class);
-         $this->call(MatchSeeder::class);
+        $this->call(TeamSeeder::class);
+        $this->call(LeagueSeeder::class);
+        $this->call(MatchSeeder::class);
     }
 }

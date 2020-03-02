@@ -7,13 +7,16 @@ use App\Match;
 
 class Standing
 {
-    public static function getStanding($matches)
+    protected $teams;
+    protected $matches;
+
+    public function getStanding()
     {
-        $played = count($matches);
+        $played = count($this->matches);
         $result = [];
 
         /** @var Match $match */
-        foreach ($matches as $match) {
+        foreach ($this->matches as $match) {
             $homeTeamStringId = (string)$match->home_team['id'];
             $awayTeamStringId = (string)$match->away_team['id'];
 
@@ -64,6 +67,40 @@ class Standing
             $result[$teamId]['goal_difference'] = $standing['goal_for'] - $standing['goal_against'];
         }
 
+        foreach ($this->teams as $team) {
+            if (!array_key_exists((string)$team['id'], $result)) {
+                $result[(string)$team['id']] = [
+                    'team_name' => $team['name'],
+                        'played' => 0,
+                        'win' => 0,
+                        'draw' => 0,
+                        'loose' => 0,
+                        'points' => 0,
+                        'goal_difference' => 0,
+                ];
+            }
+        }
+
         return $result;
+    }
+
+    /**
+     * @param mixed $teams
+     * @return Standing
+     */
+    public function setTeams(array $teams)
+    {
+        $this->teams = $teams;
+        return $this;
+    }
+
+    /**
+     * @param $matches
+     * @return $this
+     */
+    public function setMatches($matches)
+    {
+        $this->matches = $matches;
+        return $this;
     }
 }
