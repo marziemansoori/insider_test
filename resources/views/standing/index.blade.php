@@ -74,17 +74,20 @@
                 </div>
 
                 <br>
-                <div class="card">
-                    <div class="card-header">{{ \App\Match::$weekStrings[$week] }} week prediction of champions</div>
-                    <div class="card-body">
-                        @foreach($predictions as $prediction)
-                            <div class="row">
-                                <div class="col-md-8">{{ $prediction['team_name'] }}    </div>
-                                <div class="col-md-4">% {{ $prediction['predict']}}</div>
-                            </div>
-                        @endforeach
+                @if(isset($predictions) && $predictions)
+                    <div class="card">
+                        <div class="card-header">{{ \App\Match::$weekStrings[$week] }} week prediction of champions
+                        </div>
+                        <div class="card-body">
+                            @foreach($predictions as $prediction)
+                                <div class="row">
+                                    <div class="col-md-8">{{ $prediction['team_name'] }}    </div>
+                                    <div class="col-md-4">% {{ $prediction['predict']}}</div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>

@@ -20,7 +20,12 @@ class StandingController extends Controller
             ->setMatches($matches)
             ->getStanding();
 
-        $predictions = (new PredictChampion($standings))->get();
+        // TODO Do not hard code
+        if($week < 12) {
+            $predictions = (new PredictChampion($standings))->get();
+        } else {
+            $predictions = null;
+        }
 
         return view('standing.index', compact('standings', 'matches', 'predictions'));
     }
