@@ -71,17 +71,17 @@ class Standing
             if (!array_key_exists((string)$team['id'], $result)) {
                 $result[(string)$team['id']] = [
                     'team_name' => $team['name'],
-                        'played' => 0,
-                        'win' => 0,
-                        'draw' => 0,
-                        'loose' => 0,
-                        'points' => 0,
-                        'goal_difference' => 0,
+                    'played' => 0,
+                    'win' => 0,
+                    'draw' => 0,
+                    'loose' => 0,
+                    'points' => 0,
+                    'goal_difference' => 0,
                 ];
             }
         }
 
-        array_multisort(array_column($result, 'points'),  SORT_DESC,
+        array_multisort(array_column($result, 'points'), SORT_DESC,
             array_column($result, 'goal_difference'), SORT_DESC,
             $result);
 

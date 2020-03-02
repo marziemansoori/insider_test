@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\League;
+use App\libs\PredictChampion;
 use App\libs\Standing;
 use App\Match;
 
@@ -19,6 +20,8 @@ class StandingController extends Controller
             ->setMatches($matches)
             ->getStanding();
 
-        return view('standing.index', compact('standings', 'matches'));
+        $predictions = (new PredictChampion($standings))->get();
+
+        return view('standing.index', compact('standings', 'matches', 'predictions'));
     }
 }

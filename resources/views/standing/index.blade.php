@@ -33,6 +33,7 @@
                             @endforeach
                             </tbody>
                         </table>
+
                         <?php $week = (integer)(request()->route()->parameters['week'] ?? 1); ?>
                         @if($week >= 12)
                             <button type="submit" style="float: right"
@@ -68,6 +69,19 @@
                                     <div class="col-md-4">{{ $match->away_team['name'] }}</div>
                                 </div>
                             @endif
+                        @endforeach
+                    </div>
+                </div>
+
+                <br>
+                <div class="card">
+                    <div class="card-header">{{ \App\Match::$weekStrings[$week] }} week prediction of champions</div>
+                    <div class="card-body">
+                        @foreach($predictions as $prediction)
+                            <div class="row">
+                                <div class="col-md-8">{{ $prediction['team_name'] }}    </div>
+                                <div class="col-md-4">% {{ $prediction['predict']}}</div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
