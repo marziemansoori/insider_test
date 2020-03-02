@@ -1,5 +1,8 @@
 <?php
 
+use App\League;
+use App\Match;
+use App\Team;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        League::query()->delete();
+        Team::query()->delete();
+        Match::query()->delete();
+
+         $this->call(LeagueSeeder::class);
+         $this->call(TeamSeeder::class);
+         $this->call(MatchSeeder::class);
     }
 }
