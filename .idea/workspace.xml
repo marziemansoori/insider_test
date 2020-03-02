@@ -114,6 +114,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/mongodb/mongodb" />
       <path value="$PROJECT_DIR$/vendor/jenssegers/mongodb" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XnSTHx0VAzviZNxF3GaMOCqQOM" />
@@ -121,6 +122,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -159,7 +161,7 @@
       <workItem from="1581680676726" duration="753000" />
       <workItem from="1583050184226" duration="3030000" />
       <workItem from="1583139089588" duration="633000" />
-      <workItem from="1583141530135" duration="8884000" />
+      <workItem from="1583141530135" duration="18777000" />
     </task>
     <servers />
   </component>
@@ -170,14 +172,22 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Inspections" timestamp="1583156155596">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1583156155596" />
     <state x="457" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583050195407">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="457" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1583050195407" />
-    <state x="495" y="178" key="NewPhpClassDialog" timestamp="1583147863434">
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1583155460514">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="495" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1583147863434" />
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1583155460514" />
+    <state x="495" y="178" key="NewPhpClassDialog" timestamp="1583155157989">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="495" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1583155157989" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1583148410194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -191,18 +201,18 @@
       <screen x="70" y="27" width="1296" height="741" />
     </state>
     <state x="374" y="225" key="com.intellij.ide.util.TipDialog/70.27.1296.741@70.27.1296.741" timestamp="1581680377116" />
-    <state x="549" y="230" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1583153234362">
+    <state x="549" y="230" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1583158024026">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="549" y="230" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1366.728@0.0.1366.728" timestamp="1583153234362" />
+    <state x="549" y="230" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1366.728@0.0.1366.728" timestamp="1583158024026" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1583147872278">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1583147872278" />
-    <state x="328" y="61" width="709" height="667" key="search.everywhere.popup" timestamp="1583148438684">
+    <state x="328" y="61" width="709" height="667" key="search.everywhere.popup" timestamp="1583159605295">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="328" y="61" width="709" height="667" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1583148438684" />
+    <state x="328" y="61" width="709" height="667" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1583159605295" />
     <state x="381" y="89" width="672" height="678" key="search.everywhere.popup/70.27.1296.741@70.27.1296.741" timestamp="1581682354967" />
   </component>
 </project>
