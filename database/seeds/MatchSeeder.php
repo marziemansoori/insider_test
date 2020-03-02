@@ -124,7 +124,7 @@ class MatchSeeder extends Seeder
     {
         $find = true;
         while ($find) {
-            $index = rand(1, 12);
+            $index = random_int(1, 12);
             $matches = Match::where('week', $index)->get();
             if (count($matches) < 2) {
                 return $index;

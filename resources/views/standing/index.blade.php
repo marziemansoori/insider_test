@@ -34,7 +34,7 @@
                             </tbody>
                         </table>
                         <?php $week = (integer)(request()->route()->parameters['week'] ?? 1); ?>
-                        @if($week >= 16)
+                        @if($week >= 12)
                             <button type="submit" style="float: right"
                                     onclick="window.location='{{ route("standing", [1]) }}'">
                                 First week
@@ -47,7 +47,7 @@
                         @endif
 
                         {{--TODO Do not hard code all weeks --}}
-                        <button type="submit" onclick="window.location='{{ route("standing", [16]) }}'">
+                        <button type="submit" onclick="window.location='{{ route("standing", [12]) }}'">
                             Play all
                         </button>
                     </div>

@@ -81,6 +81,10 @@ class Standing
             }
         }
 
+        array_multisort(array_column($result, 'points'),  SORT_DESC,
+            array_column($result, 'goal_difference'), SORT_DESC,
+            $result);
+
         return $result;
     }
 
